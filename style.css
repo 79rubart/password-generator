@@ -1,0 +1,42 @@
+body {
+    height: 100vh;
+}
+
+main {
+    width: 480px;
+    margin: 4em auto;
+    text-align: left;
+    border: 1px solid #000000;
+}
+
+.character-length, .slider-div, .checkboxes, .strength, .button-div {
+    margin: 0 0 1em 0;
+}
+
+.slider-div, .strength {
+    border: 1px solid #000000;
+}
+
+.title {
+    text-align: left;
+}
+
+.password {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.character-length {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.checkboxes {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.copy-paste {
+    width: 2em;
+}
+
