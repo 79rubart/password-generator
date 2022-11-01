@@ -17,24 +17,26 @@
         </div>
 
         <div class="password">
-            <input type="text" class="password-output"><img src="images/copy-paste.png" alt="Copy and Paste Button" class="copy-paste">
+            <input type="text" class="password-output" readonly="readonly"><img src="images/copy-paste.png" alt="Copy and Paste Button" class="copy-paste">
         </div>
 
         <div class="options-box">
             <div class="character-length">
-                <p>Character Length</p><input type="text" class="number-length">
+                <p>Character Length</p><input type="text" id="characterlength" readonly="readonly">
             </div>
             
             <div class="slider-div">
-                Slider
+                <div class="slider">
+                    <input id="rangeslider" type="range" min="0" max="20" value="10" step="1" oninput="characterlength.value=value" onchange="characterlength.value=value">
+                </div>
             </div>
 
             <div class="checkboxes">
                 <div class="checkbox-divs">
-                    <input type="checkbox" class="include-uppercase"><label>Include Uppercase Letters</label>
+                    <input type="checkbox" class="include-lowercase"><label>Include Lowercase Letters</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" class="include-lowercase"><label>Include Lowercase Letters</label>
+                    <input type="checkbox" class="include-uppercase"><label>Include Uppercase Letters</label>
                 </div>
                 <div class="checkbox-divs">
                     <input type="checkbox" class="include-numbers"><label>Include Numbers</label>
@@ -49,9 +51,12 @@
             </div>
 
             <div class="button-div">
-                <button class="generate"><p>Generate -></p></button>
+                <button class="generate"><p>Generate</p></button>
             </div>
         </div>
     </main>
+    
+    <script src="rangeslider-js.min.js"></script>
+    <script src="jquery-3.6.1.min.js"></script>
 </body>
 </html>

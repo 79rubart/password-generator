@@ -15,7 +15,7 @@ main {
     margin: 0 0 1em 0;
 }
 
-.slider-div, .strength {
+.strength {
     border: 1px solid #000000;
 }
 
@@ -34,19 +34,10 @@ main {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    justify-content: space-between;
     margin: 0 0 2em 0;
-}
-
-.copy-paste {
     background: #24232a;
-    width: 31px;
-    cursor: pointer;
-}
-
-.options-box {
-    background: #24232a;
-    border: none;
-    padding: 1em;
+    border-radius: 5px;
 }
 
 .password-output {
@@ -54,16 +45,45 @@ main {
     border: none;
     width: 90%;
     padding: 0.6em;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    font-family: 'Kanit';
+    color: white;
+    outline: none;
+}
+
+.copy-paste {
+    width: 31px;
+    cursor: pointer;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.options-box {
     background: #24232a;
+    border: none;
+    padding: 1em;
+    border-radius: 5px;
 }
 
 .character-length {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.number-length {
+#characterlength {
+    background: none;
+    font-family: 'Kanit';
+    color: white;
+    outline: none;
+    width: 25px;
+}
 
+#rangeslider {
+    cursor: pointer;
+    width: 100%;
 }
 
 .checkboxes {
