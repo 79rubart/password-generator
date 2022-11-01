@@ -1,12 +1,14 @@
 body {
     height: 100vh;
+    background: #131217;
+    font-family: 'Kanit', sans-serif;
+    color: white;
 }
 
 main {
     width: 480px;
     margin: 4em auto;
     text-align: left;
-    border: 1px solid #000000;
 }
 
 .character-length, .slider-div, .checkboxes, .strength, .button-div {
@@ -17,13 +19,42 @@ main {
     border: 1px solid #000000;
 }
 
+.checkbox-divs {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
 .title {
     text-align: left;
+    margin: 0 0 0.5em 0;
 }
 
 .password {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
+    margin: 0 0 2em 0;
+}
+
+.copy-paste {
+    background: #24232a;
+    width: 31px;
+    cursor: pointer;
+}
+
+.options-box {
+    background: #24232a;
+    border: none;
+    padding: 1em;
+}
+
+.password-output {
+    background: none;
+    border: none;
+    width: 90%;
+    padding: 0.6em;
+    background: #24232a;
 }
 
 .character-length {
@@ -31,12 +62,20 @@ main {
     flex-flow: row wrap;
 }
 
+.number-length {
+
+}
+
 .checkboxes {
     display: flex;
     flex-flow: column nowrap;
 }
 
-.copy-paste {
-    width: 2em;
+.generate {
+    background: #a5ffaf;
+    color: black;
+    font-family: 'Kanit';
+    padding: 1em;
+    border: none;
+    border-radius: 5px;
 }
-
