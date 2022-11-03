@@ -33,22 +33,32 @@
 
             <div class="checkboxes">
                 <div class="checkbox-divs">
-                    <input type="checkbox" name="lowers" id="include-lowers" class="cb"><label for="uppers">Include Uppercase Letters</label>
+                    <input type="checkbox" name="lowers" id="include-lowers" class="checkbox" checked disabled="disabled"><label for="uppers">Include Lowercase Letters</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" name="uppers" id="include-uppers" class="cb"><label for="uppers">Include Uppercase Letters</label>
+                    <input type="checkbox" name="uppers" id="include-uppers" class="checkbox"><label for="uppers">Include Uppercase Letters</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" name="numbers" id="include-numbers" class="cb"><label for="numbers">Include Numbers</label>
+                    <input type="checkbox" name="numbers" id="include-numbers" class="checkbox"><label for="numbers">Include Numbers</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" name="symbols" id="include-symbols" class="cb"><label for="symbols">Include Symbols</label>
+                    <input type="checkbox" name="symbols" id="include-symbols" class="checkbox"><label for="symbols">Include Symbols</label>
                 </div>
             </div>
+
+            <div class="strength">
+                <div>
+                    <p>Strength</p>
+                </div>
+                <div class="meter">
+                    <input type="text" value="Weak:" id="strength-level" disabled="disabled"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox">
+                </div>
+                </div>
             
             <div class="button-div">
                 <button  id="generate">Generate</button>
             </div>
+        </div>
     </main>
 
     <script src="rangeslider-js.min.js"></script>

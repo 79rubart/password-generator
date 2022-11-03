@@ -1,13 +1,13 @@
 var generateBtn = document.getElementById('generate');
+var symbol = document.getElementById("include-symbols");
+var number = document.getElementById("include-numbers");
+var upper = document.getElementById("include-uppers");
+var lower = document.getElementById("include-lowers");
+var length = document.getElementById("characterlength").value;
+var output = document.getElementById("password-output");
+var cb = document.getElementsByClassName("checkbox");
 
 function generate() {
-    var symbol = document.getElementById("include-symbols");
-    var number = document.getElementById("include-numbers");
-    var upper = document.getElementById("include-uppers");
-    var lower = document.getElementById("include-lowers");
-    var length = document.getElementById("characterlength").value;
-    var output = document.getElementById("password-output");
-    
     output.value = '';
     var lowers = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
@@ -28,6 +28,9 @@ function generate() {
       output.value = output.value + char;
     }
 }
+
+function strength();
+    
 
 generateBtn.addEventListener('click', function(){
     generate();
