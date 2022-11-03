@@ -1,38 +1,31 @@
-let passwordOutput = document.querySelector('.password-output');
-let copyPaste = document.querySelector('.copy-paste');
-let characterLength = document.getElementById('characterlength').value;
-let includeUpper = document.querySelector('.include-uppercase');
-let includeLower = document.querySelector('.include-lowercase');
-let includeNumbers = document.querySelector('.include-numbers');
-let includeSymbols = document.querySelector('.include-symbols');
-let generateBtn = document.querySelector('.generate');
-let rangeSlider = document.getElementById('rangeslider');
+var generateBtn = document.getElementById('generate');
 
-function generate(){
-    passwordOutput.value = '';
+function generate() {
+    var symbol = document.getElementById("include-symbols");
+    var number = document.getElementById("include-numbers");
+    var upper = document.getElementById("include-uppers");
+    var lower = document.getElementById("include-lowers");
+    var length = document.getElementById("characterlength").value;
+    var output = document.getElementById("password-output");
+    
+    output.value = '';
+    var lowers = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-    if (includeUpper.checked == false && includeLower.checked == false && includeNumbers.checked == false && includeSymbols.checked == false){
-        $(includeLower).click();
+    if (symbol.checked == true) {
+      var symbols = ["?", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", ",", ".", "+", "=", "[", "]", "{", "}", ";", ":", "<", ">"];
+      symbols.push.apply(lowers, symbols);
     }
-    if (includeLower.checked == true) {
-        var lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-        lowerLetters.push.apply(lowerLetters);
+    if (number.checked == true) {
+      var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+      numbers.push.apply(lowers, numbers);
     }
-    if (includeUpper.checked == true) {
-        var upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-        upperLetters.push.apply(upperLetters);
-    }
-    if (includeNumbers.checked == true) {
-        var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-        numbers.push.apply(numbers);
-    }
-    if (includeSymbols.checked == true) {
-        var symbols = ["?", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", ",", ".", "+", "=", "[", "]", "{", "}", ";", ":", "<", ">"];
-        symbols.push.apply(symbols);
+    if (upper.checked == true) {
+      var uppers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+      uppers.push.apply(lowers, uppers);
     }
     for (var i = 0; i < length; i++) {
-        let char = lowerLetters[Math.floor(Math.random() * lowerLetters.characterLength)];
-        passwordOutput.value = passwordOutput.value + char;
+      let char = lowers[Math.floor(Math.random() * lowers.length)];
+      output.value = output.value + char;
     }
 }
 

@@ -17,14 +17,14 @@
         </div>
 
         <div class="password">
-            <input type="text" class="password-output" readonly="readonly"><img src="images/copy-paste.png" alt="Copy and Paste Button" class="copy-paste">
+            <input type="text" id="password-output" name="outputBoxName" disabled="disabled"><img src="images/copy-paste.png" alt="Copy and Paste Button" id="copy">
         </div>
 
         <div class="options-box">
             <div class="character-length">
-                <p>Character Length</p><input type="text" id="characterlength" readonly="readonly">
+                <p>Character Length</p><input type="text" id="characterlength" value="10" name="numberOfChars" disabled="disabled">
             </div>
-            
+
             <div class="slider-div">
                 <div class="slider">
                     <input id="rangeslider" type="range" min="0" max="20" value="10" step="1" oninput="characterlength.value=value" onchange="characterlength.value=value">
@@ -33,30 +33,26 @@
 
             <div class="checkboxes">
                 <div class="checkbox-divs">
-                    <input type="checkbox" class="include-lowercase"><label>Include Lowercase Letters</label>
+                    <input type="checkbox" name="lowers" id="include-lowers" class="cb"><label for="uppers">Include Uppercase Letters</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" class="include-uppercase"><label>Include Uppercase Letters</label>
+                    <input type="checkbox" name="uppers" id="include-uppers" class="cb"><label for="uppers">Include Uppercase Letters</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" class="include-numbers"><label>Include Numbers</label>
+                    <input type="checkbox" name="numbers" id="include-numbers" class="cb"><label for="numbers">Include Numbers</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" class="include-symbols"><label>Include Symbols</label>
+                    <input type="checkbox" name="symbols" id="include-symbols" class="cb"><label for="symbols">Include Symbols</label>
                 </div>
             </div>
-
-            <div class="strength">
-                <p>Strength</p>
-            </div>
-
+            
             <div class="button-div">
-                <button class="generate"><p>Generate</p></button>
+                <button  id="generate">Generate</button>
             </div>
-        </div>
     </main>
-    
+
     <script src="rangeslider-js.min.js"></script>
     <script src="jquery-3.6.1.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

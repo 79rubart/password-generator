@@ -40,7 +40,7 @@ main {
     border-radius: 5px;
 }
 
-.password-output {
+#password-output {
     background: none;
     border: none;
     width: 90%;
@@ -52,7 +52,7 @@ main {
     outline: none;
 }
 
-.copy-paste {
+#copy {
     width: 31px;
     cursor: pointer;
     border-bottom-right-radius: 5px;
@@ -91,11 +91,12 @@ main {
     flex-flow: column nowrap;
 }
 
-.generate {
+#generate {
     background: #a5ffaf;
     color: black;
     font-family: 'Kanit';
     padding: 1em;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
