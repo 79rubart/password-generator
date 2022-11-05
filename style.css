@@ -118,3 +118,13 @@ main {
     border-radius: 5px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 480px) {
+    main {
+        width: auto;
+        padding: 2em 1em;
+    }
+    #password-output {
+        width: 80%;
+    }   
+}

@@ -17,32 +17,32 @@
         </div>
 
         <div class="password">
-            <input type="text" id="password-output" name="outputBoxName" disabled="disabled"><img src="images/copy-paste.png" alt="Copy and Paste Button" id="copy">
+            <input type="text" id="password-output" name="outputBoxName" readonly><img src="images/copy-paste.png" alt="Copy and Paste Button" id="copy">
         </div>
 
         <div class="options-box">
             <div class="character-length">
-                <p>Character Length</p><input type="text" id="characterlength" value="10" name="numberOfChars" disabled="disabled">
+                <p>Character Length</p><input type="text" id="characterlength" value="10" name="numberOfCharsValue" readonly>
             </div>
 
             <div class="slider-div">
                 <div class="slider">
-                    <input id="rangeslider" type="range" min="0" max="20" value="10" step="1" oninput="characterlength.value=value" onchange="characterlength.value=value">
+                    <input id="rangeslider" type="range" name="rangesliderValue" min="0" max="20" step="1" value="10" oninput="characterlength.value=value" onchange="updateTextInput(this.value);">
                 </div>
             </div>
 
             <div class="checkboxes">
                 <div class="checkbox-divs">
-                    <input type="checkbox" name="lowers" id="include-lowers" class="checkbox" checked disabled="disabled"><label for="uppers">Include Lowercase Letters</label>
+                    <input type="checkbox" name="checkboxes" id="include-lowers" class="checkbox" checked disabled="disabled"><label for="uppers">Include Lowercase Letters</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" name="uppers" id="include-uppers" class="checkbox"><label for="uppers">Include Uppercase Letters</label>
+                    <input type="checkbox" name="checkboxes" id="include-uppers" class="checkbox"><label for="uppers">Include Uppercase Letters</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" name="numbers" id="include-numbers" class="checkbox"><label for="numbers">Include Numbers</label>
+                    <input type="checkbox" name="checkboxes" id="include-numbers" class="checkbox"><label for="numbers">Include Numbers</label>
                 </div>
                 <div class="checkbox-divs">
-                    <input type="checkbox" name="symbols" id="include-symbols" class="checkbox"><label for="symbols">Include Symbols</label>
+                    <input type="checkbox" name="checkboxes" id="include-symbols" class="checkbox"><label for="symbols">Include Symbols</label>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
                     <p>Strength</p>
                 </div>
                 <div class="meter">
-                    <input type="text" value="Weak:" id="strength-level" disabled="disabled"><input type="checkbox"><input type="checkbox"><input type="checkbox"><input type="checkbox">
+                    <input type="text" id="strength-level" readonly><input type="checkbox" class="cb"><input type="checkbox" class="cb"><input type="checkbox" class="cb"><input type="checkbox" class="cb">
                 </div>
                 </div>
             

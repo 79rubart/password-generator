@@ -5,7 +5,14 @@ var upper = document.getElementById("include-uppers");
 var lower = document.getElementById("include-lowers");
 var length = document.getElementById("characterlength").value;
 var output = document.getElementById("password-output");
-var cb = document.getElementsByClassName("checkbox");
+var cb = document.querySelectorAll(".cb");
+var checkboxes = document.querySelectorAll('.checkbox');
+var copyButton = document.getElementById("copy");
+var strengthLabel = document.getElementById("strength-level").value;
+
+function updateTextInput(val) {
+  length = val;
+}
 
 function generate() {
     output.value = '';
@@ -29,9 +36,21 @@ function generate() {
     }
 }
 
-function strength();
-    
+function copyFunction() {
+  var copy = output;
+
+  copy.select();
+  copy.setSelectionRange(0, 99999);
+
+  navigator.clipboard.writeText(copy.value);
+
+  alert("Password copied to clipboard: " + copy.value);
+}
 
 generateBtn.addEventListener('click', function(){
     generate();
+});
+
+copyButton.addEventListener('click', function(){
+  copyFunction();
 });
