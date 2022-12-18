@@ -17,22 +17,26 @@ function updateTextInput(val) {
 
 function generate() {
     output.value = '';
-    var lowers = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var pswd = [];
 
+    if (lower.checked == true) {
+      var lowers = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+      lowers.push.apply(pswd, lowers);
+    }
     if (symbol.checked == true) {
       var symbols = ["?", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", ",", ".", "+", "=", "[", "]", "{", "}", ";", ":", "<", ">"];
-      symbols.push.apply(lowers, symbols);
+      symbols.push.apply(pswd, symbols);
     }
     if (number.checked == true) {
       var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-      numbers.push.apply(lowers, numbers);
+      numbers.push.apply(pswd, numbers);
     }
     if (upper.checked == true) {
       var uppers = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-      uppers.push.apply(lowers, uppers);
+      uppers.push.apply(pswd, uppers);
     }
     for (var i = 0; i < length; i++) {
-      let char = lowers[Math.floor(Math.random() * lowers.length)];
+      let char = pswd[Math.floor(Math.random() * pswd.length)];
       output.value = output.value + char;
     }
 }
@@ -92,10 +96,18 @@ function calculateStrength(){
 drawMeter('','#18171f','#18171f','#18171f','#18171f');
 
 generateBtn.addEventListener('click', function(){
+  if (lower.checked == false && symbol.checked == false && number.checked == false && upper.checked == false){
+    drawMeter('','#18171f','#18171f','#18171f','#18171f');
+    alert("Please include at least one type of character!");
+    pincel.fillStyle = '#18171f';
+    pincel.fillRect(0, 0, 100, 30);
+    output.value = '';
+  } else {
     generate();
     pincel.fillStyle = '#18171f';
     pincel.fillRect(0, 0, 100, 30);
     calculateStrength();
+  }
 });
 
 copyButton.addEventListener('click', function(){
