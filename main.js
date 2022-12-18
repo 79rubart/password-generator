@@ -8,7 +8,8 @@ var output = document.getElementById("password-output");
 var cb = document.querySelectorAll(".cb");
 var checkboxes = document.querySelectorAll('.checkbox');
 var copyButton = document.getElementById("copy");
-var strengthLabel = document.getElementById("strength-level").value;
+var tela = document.querySelector("canvas");
+var pincel = tela.getContext('2d');
 
 function updateTextInput(val) {
   length = val;
@@ -46,6 +47,34 @@ function copyFunction() {
 
   alert("Password copied to clipboard: " + copy.value);
 }
+
+function drawMeter(strength, cor1, cor2, cor3, cor4) {
+  pincel.font='30px Kanit';
+  pincel.fillStyle='white';
+  pincel.fillText(strength, 50, 0);
+
+  pincel.fillStyle = cor1;
+  pincel.fillRect(100, 0, 15, 30);
+  pincel.strokeStyle = 'white';
+  pincel.strokeRect(100, 0, 15, 30);
+
+  pincel.fillStyle = cor2;
+  pincel.fillRect(125, 0, 15, 30);
+  pincel.strokeStyle = 'white';
+  pincel.strokeRect(125, 0, 15, 30);
+
+  pincel.fillStyle = cor3;
+  pincel.fillRect(150, 0, 15, 30);
+  pincel.strokeStyle = 'white';
+  pincel.strokeRect(150, 0, 15, 30);
+
+  pincel.fillStyle = cor4;
+  pincel.fillRect(175, 0, 15, 30);
+  pincel.strokeStyle = 'white';
+  pincel.strokeRect(175, 0, 15, 30);
+}
+
+drawMeter('weak','#18171f','#18171f','#18171f','#18171f');
 
 generateBtn.addEventListener('click', function(){
     generate();
