@@ -48,36 +48,54 @@ function copyFunction() {
   alert("Password copied to clipboard: " + copy.value);
 }
 
-function drawMeter(strength, cor1, cor2, cor3, cor4) {
-  pincel.font='30px Kanit';
+function drawMeter(strength, color1, color2, color3, color4) {
+  pincel.font='20px Kanit';
   pincel.fillStyle='white';
-  pincel.fillText(strength, 50, 0);
+  pincel.fillText(strength, 0, 25);
 
-  pincel.fillStyle = cor1;
+  pincel.fillStyle = color1;
   pincel.fillRect(100, 0, 15, 30);
   pincel.strokeStyle = 'white';
   pincel.strokeRect(100, 0, 15, 30);
 
-  pincel.fillStyle = cor2;
+  pincel.fillStyle = color2;
   pincel.fillRect(125, 0, 15, 30);
   pincel.strokeStyle = 'white';
   pincel.strokeRect(125, 0, 15, 30);
 
-  pincel.fillStyle = cor3;
+  pincel.fillStyle = color3;
   pincel.fillRect(150, 0, 15, 30);
   pincel.strokeStyle = 'white';
   pincel.strokeRect(150, 0, 15, 30);
 
-  pincel.fillStyle = cor4;
+  pincel.fillStyle = color4;
   pincel.fillRect(175, 0, 15, 30);
   pincel.strokeStyle = 'white';
   pincel.strokeRect(175, 0, 15, 30);
 }
 
-drawMeter('weak','#18171f','#18171f','#18171f','#18171f');
+function calculateStrength(){
+  if (length <= 5){
+    drawMeter('Very Weak', '#facb67','#18171f','#18171f','#18171f');
+  }
+  if (length > 5 && length <= 10){
+    drawMeter('Weak', '#facb67','#facb67','#18171f','#18171f');
+  }
+  if (length > 10 && length <= 15){
+    drawMeter('Medium', '#facb67','#facb67','#facb67','#18171f');
+  }
+  if (length > 15 && length <= 20){
+    drawMeter('Strong', '#facb67','#facb67','#facb67','#facb67');
+  }
+}
+
+drawMeter('','#18171f','#18171f','#18171f','#18171f');
 
 generateBtn.addEventListener('click', function(){
     generate();
+    pincel.fillStyle = '#18171f';
+    pincel.fillRect(0, 0, 100, 30);
+    calculateStrength();
 });
 
 copyButton.addEventListener('click', function(){
